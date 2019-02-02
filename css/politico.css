@@ -1,0 +1,100 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    margin: 20px;
+    background: url('../images/election.jpg') no-repeat;
+    background-size: cover;
+}
+
+/* .classes #ids */
+.container {    /*container is global */
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* header styles */
+
+header {
+    background: green;
+    color: white;
+    padding-top: 30px; 
+    min-height: 70px; /* when the screen is smaller adjust height to this size */
+    border-bottom:black 3px solid;
+}
+
+header a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px
+}
+
+header #brand{
+    float: left;
+}
+
+header #brand h1{
+    margin: 0;
+}
+
+header nav {
+    float: right;
+}
+
+/* setting styles on headers highlight and current classes */
+header .highlight, header .current a{
+    color: black;
+    font-weight: bold
+}
+
+/*hovering effect on headers links */
+header a:hover {
+    color: red;
+    font-weight: bold;
+}
+
+/* style the 'middle-section' section */
+#middle-section {
+    min-height: 400px;
+    text-align: center;
+    color: black;
+    font-weight: bold
+}
+
+/* style the h1 in the middle section */
+
+#middle-section h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+    color: red
+}
+
+/* style the paragraph in the middle section */
+
+#middle-section p{
+    font-size: 20px;
+}
+
+/* style the footer section */
+
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
