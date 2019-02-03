@@ -6,28 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Politico | Login </title>
     <link href="css/politico.css" rel="stylesheet" type="text/css">
-    <style>
-        #dropdown {
-            position: relative;
-            cursor: pointer;
-            left: 50px;
-            top: 50px
-        }
-
-        #dropContainer {
-            position: absolute;
-            top: 20px;
-            left: -1px;
-            overflow-y:auto;
-            max-height: 250px;
-            width: 192px;
-            background-color: white;
-            display: none;
-            text-align: left;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -40,20 +18,63 @@
         </div>
         </header>
         <div class="forms">
-            <form action="citizenDashboard.html">
+            <form action="citizenDashboard.html" onsubmit="return Validate()" name="valid_form">
             <h1>Login</h1>
             <div class="inputField">
                 <label>National ID:</label>
                 <input type="text" name="citizenId" placeholder="Enter National ID">
+                <div id="id_error" class="val_error"></div>
             </div>
             <div class="inputField">
                 <label>Password:</label>
                 <input type="password" name="pass" placeholder="Enter Password">
+                <div id="pass_error" class="val_error"></div>
             </div>
             
             <button type="submit">Login</button>
-            <p>Dont have an Accoount? <a href="signup.html">Sign Up</a></p>
+            <p>Forgot Password ? <a href="resetPassword.html">Reset Here</a></p>
             </form>
         </div>
+        <script type="text/javascript">
+            /*Get the forms input objects */
+            var citizenId = document.forms["valid_form"]["citizenId"]
+            var pass = document.forms["valid_form"]["pass"]
+           
+            /*get the div id's for error display */
+            var id_error = document.getElementById("id_error");
+            var pass_error = document.getElementById("pass_error");
+    
+            //validation functions
+            function Validate(){
+                //Citizen Id validation 
+                //basic validation - the field should bot be empty on submitting
+                if(citizenId.value == "" ){
+                    citizenId.style.border = "1px solid red";
+                    id_error.textContent = "Citizen ID is required";
+                    citizenId.focus();
+                    return false;
+    
+                }
+    
+                //data format validation
+                //The ID entered must be a number and should be 8 digits long
+                if(citizenId.value == "" || isNaN(citizenId.value) || citizenId.value.length != 8){
+                    citizenId.style.border = "1px solid red";
+                    id_error.textContent = "Citizen ID should be 8 digits long";
+                    citizenId.focus();
+                    return false;
+                }
+    
+    
+                //Password validation 
+                //basic validation - the password field should bot be empty on submitting
+                if(pass.value == "" ){
+                    pass.style.border = "1px solid red";
+                    pass_error.textContent = "Password is required";
+                    pass.focus();
+                    return false;
+                }
+                }
+</script>    
 </body>
 </html>

@@ -21,20 +21,55 @@
                 </nav>
             </div>
             </header>
-    <div class="signup-page">
-        <div class="form">
-            <form class="signup-form">
-                <h1>Add a Political Party</h1>
-                Party Name:<input type="text" name="partyName" placeholder="Enter Party Name"><br>
-                Party Leader:<input type="text" name="partyLeader" placeholder="Party Leader"><br>
-                
-                <button type="submit">Add Party</a></button>
-                
-             </form>
+        <div class="forms">
+            <form action="#" onsubmit="return Validate()" name="valid_form">
+            <h1>Add a Political Party</h1>
+            <div class="inputField">
+                <label>Party Name</label>
+                <input type="text" name="partyName" placeholder="Enter Party Name">
+                <div id="party_error" class="val_error"></div>
+            </div>
+            <div class="inputField">
+                <label>Party Leader</label>
+                <input type="text" name="leader" placeholder="Enter Party Chairman">
+                <div id="leader_error" class="val_error"></div>
+            </div>
             
+            <button type="submit">Add Party</button>
+            </form>
         </div>
-        
-    </div>
     
+    <script type="text/javascript">
+        /*Get the forms input objects */
+        var partyName = document.forms["valid_form"]["partyName"]
+        var leader = document.forms["valid_form"]["leader"]
+        
+
+        /*get the div id's for error display */
+        var party_error = document.getElementById("party_error");
+        var leader_error = document.getElementById("leader_error");
+
+        //validation functions
+        function Validate(){
+            //Party name input field  validation 
+            //basic validation - the field should bot be empty on submitting
+            if(partyName.value == "" ){
+                partyName.style.border = "1px solid red";
+                party_error.textContent = "Party name is required";
+                partyName.focus();
+                return false;
+
+            }
+
+            //Party leader field validation
+            if(leader.value == "" ){
+                leader.style.border = "1px solid red";
+                leader_error.textContent = "Party leader is required";
+                leader.focus();
+                return false;
+
+            }
+        }
+     </script>       
 </body>
 </html>

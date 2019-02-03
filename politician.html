@@ -22,15 +22,17 @@
         </div>
         </header>
         <div class="forms">
-            <form action="#">
+            <form action="#" onsubmit="return Validate()" name="valid_form">
             <h1>Application Form</h1>
             <div class="inputField">
                 <label>Full Names:</label>
                 <input type="text" name="poliName" placeholder="Enter Full Names as per National ID">
+                <div id="poliName_error" class="val_error"></div>
             </div>
             <div class="inputField">
                     <label>Describe Yourself:</label>
-                    <textarea placeholder="Describe yourself"></textarea>
+                    <textarea placeholder="Describe yourself" name="desc_yourself"></textarea>
+                    <div id="desc_error" class="val_error"></div>
             </div>
             <div class="inputField">
                     <label>Select a Political Party:</label>
@@ -39,7 +41,8 @@
                   <option>Party B</option>
                   <option>Party C</option>
                   <option>Party D</option>
-              </select>          
+              </select> 
+              <div id="parties_error" class="val_error"></div>         
             </div>
             <div class="inputField">
                     <label>Select an Office:</label>
@@ -49,9 +52,64 @@
                   <option>Office C</option>
                   <option>Office D</option>
               </select>          
+              <div id="office_error" class="val_error"></div>
             </div>
             <button type="submit">Send</button>
             </form>
         </div>
+    <script type="text/javascript">
+        /*Get the forms input objects */
+        var poliName = document.forms["valid_form"]["poliName"]
+        var desc_yourself = document.forms["valid_form"]["desc_yourself"]
+        var parties = document.forms["valid_form"]["parties"]
+        var offices = document.forms["valid_form"]["offices"]
+        
+
+        /*get the div id's for error display */
+        var poliName_error = document.getElementById("poliName_error");
+        var desc_error = document.getElementById("desc_error");
+        var parties_error = document.getElementById("parties_error");
+        var office_error = document.getElementById("office_error");
+       
+
+
+        //validation functions
+        function Validate(){
+            //Politician Name input field  validation 
+            //basic validation - the field should bot be empty on submitting
+            if(poliName.value == "" ){
+                poliName.style.border = "1px solid red";
+                poliName_error.textContent = "Politician Name is required";
+                poliName.focus();
+                return false;
+
+            }
+
+            //Politician Desc  field validation
+            if(desc_yourself.value == "" ){
+                desc_yourself.style.border = "1px solid red";
+                desc_error.textContent = "Please tell us about yourself";
+                desc_yourself.focus();
+                return false;
+
+            }
+            //Choose party field validation
+            if(parties.value == "" ){
+                parties.style.border = "1px solid red";
+                parties_error.textContent = "A Political Party is required" ;
+                parties.focus();
+                return false;
+
+            }
+
+            if(offices.value == "" ){
+                offices.style.border = "1px solid red";
+                office_error.textContent = "A Political Office is required" ;
+                offices.focus();
+                return false;
+
+            }
+        }
+        </script>       
 </body>
 </html>

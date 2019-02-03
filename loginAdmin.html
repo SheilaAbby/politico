@@ -11,27 +11,69 @@
     <header>
         <div class="container">
             <div id="brand">
-                <h1>POLITICO </h1>
+                <h1>POLITICO Admin</h1>
                 <span class="highlight"><i>Lets move Kenya Foward, Together</i></span>
             </div>
         
         </div>
         </header>
         <div class="forms">
-            <form action="electoralDashboard.html">
-            <h1>Login Admin</h1>
+            <form action="electoralDashboard.html" onsubmit="return Validate()" name="valid_form">
+            <h1>Login</h1>
             <div class="inputField">
                 <label>National ID:</label>
-                <input type="text" name="adminId" placeholder="Enter National ID">
+                <input type="text" name="citizenId" placeholder="Enter National ID">
+                <div id="id_error" class="val_error"></div>
             </div>
             <div class="inputField">
                 <label>Password:</label>
-                <input type="password" name="Adminpass" placeholder="Enter Password">
+                <input type="password" name="pass" placeholder="Enter Password">
+                <div id="pass_error" class="val_error"></div>
             </div>
             
-            <button type="submit">Send</button>
-            <p>Dont have an Account? <a href="signup.html">Sign Up</a></p>
+            <button type="submit">Login</button>
             </form>
         </div>
+        <script type="text/javascript">
+            /*Get the forms input objects */
+            var citizenId = document.forms["valid_form"]["citizenId"]
+            var pass = document.forms["valid_form"]["pass"]
+           
+            /*get the div id's for error display */
+            var id_error = document.getElementById("id_error");
+            var pass_error = document.getElementById("pass_error");
+    
+            //validation functions
+            function Validate(){
+                //Citizen Id validation 
+                //basic validation - the field should bot be empty on submitting
+                if(citizenId.value == "" ){
+                    citizenId.style.border = "1px solid red";
+                    id_error.textContent = "Citizen ID is required";
+                    citizenId.focus();
+                    return false;
+    
+                }
+    
+                //data format validation
+                //The ID entered must be a number and should be 8 digits long
+                if(citizenId.value == "" || isNaN(citizenId.value) || citizenId.value.length != 8){
+                    citizenId.style.border = "1px solid red";
+                    id_error.textContent = "Citizen ID should be 8 digits long";
+                    citizenId.focus();
+                    return false;
+                }
+    
+    
+                //Password validation 
+                //basic validation - the password field should bot be empty on submitting
+                if(pass.value == "" ){
+                    pass.style.border = "1px solid red";
+                    pass_error.textContent = "Password is required";
+                    pass.focus();
+                    return false;
+                }
+                }
+</script>    
 </body>
 </html>

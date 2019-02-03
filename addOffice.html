@@ -21,18 +21,55 @@
                 </nav>
             </div>
             </header>
-    <div class="signup-page">
-        <div class="form">
-            <form class="signup-form">
-                <h1>Add a Government Office</h1>
-                Office Title:<input type="text" name="officeTitle" placeholder="Enter Office Title"><br>
-                Describe:<input type="text" name="description" placeholder="Describe this office"><br> 
-                <button type="submit">Add Office</a></button>
-             </form>
+        <div class="forms">
+            <form action="#" onsubmit="return Validate()" name="valid_form">
+            <h1>Add a Political Office</h1>
+            <div class="inputField">
+                <label>Office Title</label>
+                <input type="text" name="officeTitle" placeholder="Enter Office Title">
+                <div id="office_error" class="val_error"></div>
+            </div>
+            <div class="inputField">
+                <label>Describe the Office:</label>
+                <textarea placeholder="Describe the Office" name="officeDesc"></textarea>
+                <div id="desc_error" class="val_error"></div>
+           </div>
             
+            <button type="submit">Add Office</button>
+            </form>
         </div>
-        
-    </div>
     
+    <script type="text/javascript">
+        /*Get the forms input objects */
+        var officeTitle = document.forms["valid_form"]["officeTitle"]
+        var officeDesc = document.forms["valid_form"]["officeDesc"]
+        
+
+        /*get the div id's for error display */
+        var office_error = document.getElementById("office_error");
+        var desc_error = document.getElementById("desc_error");
+
+        //validation functions
+        function Validate(){
+            //Office title input field  validation 
+            //basic validation - the field should bot be empty on submitting
+            if(officeTitle.value == "" ){
+                officeTitle.style.border = "1px solid red";
+                office_error.textContent = "Office Title is required";
+                officeTitle.focus();
+                return false;
+
+            }
+
+            //Office Desc field validation
+            if(officeDesc.value == "" ){
+                officeDesc.style.border = "1px solid red";
+                desc_error.textContent = "A Description  is required";
+                officeDesc.focus();
+                return false;
+
+            }
+        }
+     </script>       
 </body>
 </html>
