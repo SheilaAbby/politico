@@ -5,7 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Politico | Citizen</title>
-    <link href="css/politico.css" rel="stylesheet" type="text/css">
+     <link href="css/politico.css" rel="stylesheet" type="text/css">
+
+    <style>
+        img {
+            width: 200px;
+            height: 150px;
+        }
+        .gallery {
+            max-width: 950px;
+            margin: auto;
+            background: white;
+            overflow:auto;
+        }
+        .photos {
+            margin: 5px;
+            border: 1px solid black;
+            float: left;
+            width: 400px;
+        }
+
+        .photos img {
+            width: 100px;
+            height: auto;
+        }
+
+        .details {
+            padding: 15px;
+            text-align: center
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,12 +53,50 @@
     </header>
 
     <section id="middle-section">
-        <div class="container">
-            <h1>View All Aspirants.</h1>
-            <p>Politico enables citizens give their mandate to<br>
-                 politicians running for different government offices
-            while building trust in the process through transparency.
-            </p>
+       
+                <h1>All Aspirants.</h1>
+            <div class="gallery">
+                <div class="photos"> 
+                    <img src="images/pol1.jpg">
+                    <div class="details">
+                        Name:John Paul<br>
+                        Party:Jubilee<br>
+                        Office:MP<br>
+                        <button>VOTE</button>
+                    </div>
+
+                </div>
+                <div class="photos"> 
+                        <img src="images/pol2.jpg">
+                        <div class="details">
+                            Name:George Paul<br>
+                            Party:Orange<br>
+                            Office:MCA<br>
+                            <button>VOTE</button>
+                        </div>
+    
+                    </div>
+                    <div class="photos"> 
+                            <img src="images/pol3.jpg">
+                            <div class="details">
+                                Name:George Michael<br>
+                                Party:Orange<br>
+                                Office:Governor<br>
+                                <button>VOTE</button>
+                            </div>
+        
+                        </div>
+                        <div class="photos"> 
+                                <img src="images/pol4.jpg">
+                                <div class="details">
+                                    Name:Shadarack Jeremy<br>
+                                    Party:Jubilee<br>
+                                    Office:MP<br>
+                                    <button>VOTE</button>
+                                </div>
+            
+                            </div>
+           
         </div>
     </section>
     <footer>
