@@ -6,30 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Politico | Politician </title>
     <link href="css/politico.css" rel="stylesheet" type="text/css">
-    <link href="signup.css" rel="stylesheet" type="text/css">
-    <link href="site_forms.css" rel="stylesheet" type="text/css">
-    <style>
-        #dropdown {
-            position: relative;
-            cursor: pointer;
-            left: 50px;
-            top: 50px
-        }
-
-        #dropContainer {
-            position: absolute;
-            top: 20px;
-            left: -1px;
-            overflow-y:auto;
-            max-height: 250px;
-            width: 192px;
-            background-color: white;
-            display: none;
-            text-align: left;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -46,6 +22,7 @@
         </div>
         </header>
         <div class="forms">
+            <form action="#">
             <h1>Application Form</h1>
             <div class="inputField">
                 <label>Full Names:</label>
@@ -74,26 +51,7 @@
               </select>          
             </div>
             <button type="submit">Send</button>
+            </form>
         </div>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous">
-
-    $(document).ready(function (){
-        function createDropDown(){
-            var dropdown = $(`#dropdown`);
-            var i;
-            var htmlString = `<div id="dropContainer">`;
-
-            for(i=0; i < 10;i ++){
-                htmlString += `<div class="dropOption">option '+1+'</div>`;
-            }
-
-            htmlString += '</div>'
-            drop.append(htmlString)
-        }
-    })
-    </script>
 </body>
 </html>
