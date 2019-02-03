@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Politico | Politician </title>
+    <link href="css/politico.css" rel="stylesheet" type="text/css">
+    <link href="signup.css" rel="stylesheet" type="text/css">
+    <link href="site_forms.css" rel="stylesheet" type="text/css">
+    <style>
+        #dropdown {
+            position: relative;
+            cursor: pointer;
+            left: 50px;
+            top: 50px
+        }
+
+        #dropContainer {
+            position: absolute;
+            top: 20px;
+            left: -1px;
+            overflow-y:auto;
+            max-height: 250px;
+            width: 192px;
+            background-color: white;
+            display: none;
+            text-align: left;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="brand">
+                <h1>POLITICO - Politician</h1>
+                <span class="highlight"><i>Lets move Kenya Foward, Together</i></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+        <div class="forms">
+            <h1>Application Form</h1>
+            <div class="inputField">
+                <label>Full Names:</label>
+                <input type="text" name="poliName" placeholder="Enter Full Names as per National ID">
+            </div>
+            <div class="inputField">
+                    <label>Describe Yourself:</label>
+                    <textarea placeholder="Describe yourself"></textarea>
+            </div>
+            <div class="inputField">
+                    <label>Select a Political Party:</label>
+              <select name="parties" id="party">
+                  <option>Party A</option>
+                  <option>Party B</option>
+                  <option>Party C</option>
+                  <option>Party D</option>
+              </select>          
+            </div>
+            <div class="inputField">
+                    <label>Select an Office:</label>
+              <select name="offices" id="office">
+                  <option>Office A</option>
+                  <option>Office B</option>
+                  <option>Office C</option>
+                  <option>Office D</option>
+              </select>          
+            </div>
+            <button type="submit">Send</button>
+        </div>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+
+    $(document).ready(function (){
+        function createDropDown(){
+            var dropdown = $(`#dropdown`);
+            var i;
+            var htmlString = `<div id="dropContainer">`;
+
+            for(i=0; i < 10;i ++){
+                htmlString += `<div class="dropOption">option '+1+'</div>`;
+            }
+
+            htmlString += '</div>'
+            drop.append(htmlString)
+        }
+    })
+    </script>
+</body>
+</html>
