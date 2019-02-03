@@ -9,7 +9,7 @@
  var time_period = countDate - time_now;
 
  /*Calculates days, hrs, mins, and secs*/
- var days = Math.floor(time_period % (1000 * 60 * 60 * 24));
+ var days = Math.floor(time_period / (1000 * 60 * 60 * 24));
  var hrs = Math.floor((time_period % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
  var mins = Math.floor((time_period % (1000 * 60 * 60)) / (1000 * 60 ));
  var secs = Math.floor((time_period % (1000 * 60)) / 1000);
