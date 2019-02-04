@@ -8,32 +8,69 @@
      <link href="css/politico.css" rel="stylesheet" type="text/css">
 
     <style>
+       @media(min-width: 468px){  /* makes this responsove*/
+        .container-2 {
+            display: flex;
+            /*
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-between;
+            */
+            
+            justify-content: space-between;
+            
+        }
+        }
+
+        .container-2 div{ 
+            border: 1px green solid;
+            padding: 10px;
+        }
+
+        .box-1 {
+            flex: 1;
+
+        }
+
+        .box-2 {
+            flex: 2;
+        }
+
+        .box-3 {
+            flex: 1;
+        }
+
+        table {
+            width: 500px;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        table, th, td {
+            border: 1px solid green;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: green;
+        }
+
+        tr:nth-child(odd) {
+            background-color: white;
+            color: red;
+        }
         img {
-            width: 200px;
-            height: 150px;
+            width: 70px;
+            height: 40px;
         }
-        .gallery {
-            max-width: 950px;
-            margin: auto;
-            background: white;
-            overflow:auto;
-        }
-        .photos {
-            margin: 5px;
-            border: 1px solid black;
-            float: left;
-            width: 400px;
-        }
-
-        .photos img {
-            width: 100px;
-            height: auto;
-        }
-
-        .details {
-            padding: 15px;
-            text-align: center
-        }
+        
     </style>
 </head>
 <body>
@@ -53,50 +90,179 @@
     </header>
 
     <section id="middle-section">
-       
-                <h1>All Aspirants.</h1>
-            <div class="gallery">
-                <div class="photos"> 
-                    <img src="images/pol1.jpg">
-                    <div class="details">
-                        Name:John Paul<br>
-                        Party:Jubilee<br>
-                        Office:MP<br>
-                        <button>VOTE</button>
-                    </div>
-
-                </div>
-                <div class="photos"> 
-                        <img src="images/pol2.jpg">
-                        <div class="details">
-                            Name:George Paul<br>
-                            Party:Orange<br>
-                            Office:MCA<br>
-                            <button>VOTE</button>
-                        </div>
+        <div class="container-2">
+            <div class="box-1">
+                <h3>Know your Rights</h3>
+                <p>The Constitution grants 4 cadres of rights to participate in the electoral process.These rights include:-</p>
+                <ul>
+                    <li>Right to be registered as a voter;</li>
+                    <li>Right to vote by secret ballot in any election or referendum;</li>
+                    <li>Right to be a candidate and if elected, right to hold a public office; and</li>
+                    <li>Right to join and participate in a political party.</li>     
+                </ul>
+                <a href="http://kenyalaw.org/kenyalawblog/electoral-process-in-kenya/"><h3>For more details visit this site</h3></a>
+            </div>
+            <div class="box-2"> 
+                    <table>
+                            <caption><b><h1>Vote Here</h1></b></caption>
+                            <tr>
+                                <th>Government Office</th>
+                                <th>Candidate</th>
+                            </tr>
+                    
+                            <tr rowspan="4">
+                                <th>Office of the President<br>(President)</th>
+                                <td>
+                                    <form action="#">
+                                    <div class="president-candidate-options">
+                                            <img src="images/pol2.jpg"><br>
+                                            <label>Name: John Maina</label><br>
+                                            <label>Party: Orange</label>&nbsp;&nbsp;
+                                            <input type="radio" name="president-candidates" value="candidate1" >
+                                        </div>
+                        
+                                        <div class="president-candidate-options">
+                                                <img src="images/pol2.jpg"><br>
+                                                <label>Name: John Maina</label><br>
+                                                <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                
+                                                <input type="radio" name="president-candidates" value="candidate2" >
+                                        </div>
+                                        <div class="president-candidate-options">
+                                                <img src="images/pol2.jpg"><br>
+                                                <label>Name: John Maina</label><br>
+                                                <label>Party: NASA</label>&nbsp;&nbsp;
+                                                <input type="radio" name="president-candidates" value="candidate3" >
+                                        </div>
+                                        <button type="submit">VOTE</button>
+                                    </form>
+                                       
+                                </td>
+                            </tr>
+                            <tr rowspan="4">
+                                    <th>Office of County Governor<br>(Governor)</th>
+                                    <td>
+                                        <form action="#">
+                                        <div class="governor-candidate-options">
+                                                <img src="images/pol2.jpg"><br>
+                                                <label>Name: John Maina</label><br>
+                                                <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                <input type="radio" name="governor-candidates" value="candidate1" >
+                                            </div>
+                            
+                                            <div class="president-candidate-options">
+                                                    <img src="images/pol2.jpg"><br>
+                                                    <label>Name: John Maina</label><br>
+                                                    <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                    <input type="radio" name="governor-candidates" value="candidate2" >
+                                            </div>
+                                            <div class="president-candidate-options">
+                                                    <img src="images/pol2.jpg"><br>
+                                                    <label>Name: John Maina</label><br>
+                                                    <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                    <input type="radio" name="governor-candidates" value="candidate3" >
+                                            </div>
+                                            <button type="submit">VOTE</button>
+                                        </form>
+                                           
+                                    </td>
+                                </tr>
+                            
+                                <tr rowspan="4">
+                                        <th>Office of the Senate<br>(Senator)</th>
+                                        <td>
+                                            <form action="#">
+                                            <div class="senate-candidate-options">
+                                                    <img src="images/pol2.jpg"><br>
+                                                    <label>Name: John Maina</label><br>
+                                                    <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                    <input type="radio" name="senate-candidates" value="candidate1" >
+                                                </div>
+                                
+                                                <div class="president-candidate-options">
+                                                        <img src="images/pol2.jpg"><br>
+                                                        <label>Name: John Maina</label><br>
+                                                        <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                        <input type="radio" name="senate-candidates" value="candidate2" >
+                                                </div>
+                                                <div class="president-candidate-options">
+                                                        <img src="images/pol2.jpg"><br>
+                                                        <label>Name: John Maina</label><br>
+                                                        <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                        <input type="radio" name="senate-candidates" value="candidate3" >
+                                                </div>
+                                                <button type="submit">VOTE</button>
+                                            </form>
+                                               
+                                        </td>
+                                    </tr>
+                    
+                                    <tr rowspan="4">
+                                            <th><h>Office of the National Assembly<br>(MP)</h></th>
+                                            <td>
+                                                <form action="#">
+                                                <div class="mp-candidate-options">
+                                                        <img src="images/pol2.jpg"><br>
+                                                        <label>Name: John Maina</label><br>
+                                                        <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                        <input type="radio" name="mp-candidates" value="candidate1" >
+                                                    </div>
+                                    
+                                                    <div class="mp-candidate-options">
+                                                            <img src="images/pol2.jpg"><br>
+                                                            <label>Name: John Maina</label><br>
+                                                            <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                            <input type="radio" name="mp-candidates" value="candidate2" >
+                                                    </div>
+                                                    <div class="mp-candidate-options">
+                                                            <img src="images/pol2.jpg"><br>
+                                                            <label>Name: John Maina</label><br>
+                                                            <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                            <input type="radio" name="mp-candidates" value="candidate3" >
+                                                    </div>
+                                                    <button type="submit">VOTE</button>
+                                                </form>
+                                                   
+                                            </td>
+                                        </tr>
+                            <tr rowspan="4">
+                                    <th><h>County Assembly Member</h><br>(MCA)</th>
+                                    
+                                    <td>
+                                        <form action="#">
+                                        <div class="mca-candidate-options">
+                                                <img src="images/pol2.jpg"><br>
+                                                <label>Name: John Maina</label><br>
+                                                <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                <input type="radio" name="mca-candidates" value="candidate1" >
+                                            </div>
+                            
+                                            <div class="president-candidate-options">
+                                                    <img src="images/pol2.jpg"><br>
+                                                    <label>Name: John Maina</label><br>
+                                                    <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                    <input type="radio" name="mca-candidates" value="candidate2" >
+                                            </div>
+                                            <div class="president-candidate-options">
+                                                    <img src="images/pol2.jpg"><br>
+                                                    <label>Name: John Maina</label><br>
+                                                    <label>Party: Jubilee</label>&nbsp;&nbsp;
+                                                    <input type="radio" name="mca-candidates" value="candidate3" >
+                                            </div>
+                                            <button type="submit">VOTE</button>
+                                        </form>
+                                           
+                                    </td>
+                                </tr>
+                                
+                                    
+                        </table>
+            </div>
+            <div class="box-3">
+                <h3>Results Section</h3>
+                <p>No Results yet</p>
+            </div>
     
-                    </div>
-                    <div class="photos"> 
-                            <img src="images/pol3.jpg">
-                            <div class="details">
-                                Name:George Michael<br>
-                                Party:Orange<br>
-                                Office:Governor<br>
-                                <button>VOTE</button>
-                            </div>
-        
-                        </div>
-                        <div class="photos"> 
-                                <img src="images/pol4.jpg">
-                                <div class="details">
-                                    Name:Shadarack Jeremy<br>
-                                    Party:Jubilee<br>
-                                    Office:MP<br>
-                                    <button>VOTE</button>
-                                </div>
-            
-                            </div>
-           
         </div>
     </section>
     <footer>
